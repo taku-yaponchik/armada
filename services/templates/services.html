@@ -1,0 +1,449 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Armada
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+</head>
+<body>
+<header class="header-text  container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="header-success">
+                <p >Наша сила в вашем успехе !</p>
+            </div>
+            <div class="ml-auto">
+                <p>
+                    Нужна помощь? Свяжитесь с нашим экспретом
+                </p>
+            </div>
+            <div class="header-number">
+                <a href="">+996 (553) 993 342</a>
+            </div>
+        </div>
+    </div>
+</header>
+<header class="header ">
+    <div class="header-overlay ">
+        <div class="nav-container ">
+            <a href="index.html"><div class="logo "><img src="{% static 'img/logo.png' %}" alt="logo"></div></a>
+            <div class="nav-wrapper">
+                <ul class="nav">
+                    <li class="nav__item"><a href="services.html" class="nav__link">Услуги</a></li>
+                    <li class="nav__item"><a href="work.html" class="nav__link">О нас</a></li>
+                    <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+                    <li class="nav__item"><a href="portfolio.html" class="nav__link">Портфолио</a></li>
+                    <li class="nav__item"><a href="production.html" class="nav__link">Производство</a></li>
+                    <li class="nav__item "><button href="#" class="btn nav__link">Скачать прайс</button>
+                    </li>
+                </ul>
+                <div id="menu-togle" class="menu-icon">
+                    <div class="menu-icon-line"></div>
+                </div>
+                <div id="mobile-nav" class="mobile-nav">
+                    <ul class="mobile-nav__list">
+                        <li class="mobile-nav__item"><a href="services.html" class="mobile-nav__link">Услуги</a></li>
+                        <li class="mobile-nav__item"><a href="work.html" class="mobile-nav__link">О нас</a></li>
+                        <li class="mobile-nav__item"><a href="contacts.html" class="mobile-nav__link">Контакты</a></li>
+                        <li class="mobile-nav__item"><a href="portfolio.html" class="mobile-nav__link">Портфолио</a></li>
+                        <li class="mobile-nav__item"><a href="production.html" class="mobile-nav__link">Производство</a></li>
+                        <li class="mobile-nav__item"><button href="#" class="btn nav__link">Скачать прайс</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="index.html"> <div class="logos"><img src="{% static 'img/logo.png' %}" alt="logo"></div></a>
+        </div>
+    </div>
+    <div class="mobile-content">
+        <div class="intro__media-mobile">
+            <video class="intro__video-mobile" src="{% static './video/5минут новый.mp4' %}" autoplay muted loop></video>
+        </div>
+        <p>Наружная реклама в <br> <span class="bish">Бишкеке</span> </p>
+        <p>Произдводство наружной рекламы
+            и <br> создание проектов под ключ</p>
+        <button class=" btn">Оставить заявку</button>
+        <div class="mobile-con-media">
+            <a><i class="col-xl-12 fab fa-whatsapp"></i></a>
+            <a><i class="col-xl-12 fab fa-instagram"></i></a>
+            <a><i class="col-xl-12 fab fa-facebook-square"></i></a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="intro__media">
+            <video class="intro__video" src="{% static './video/5минут новый.mp4' %}" autoplay muted loop></video>
+        </div>
+        <div class="container con-content">
+            <div class="row">
+                <div class="col-xl-8">
+                    <p class="">Наружная реклама
+                        <span class="v v-mobile">в</span> <span class="bish"> Бишкеке </span> </p>
+                    <p class="">Произдводство наружной рекламы
+                        и создание проектов под ключ</p>
+                    <button class="mt-4 btn content-btn">Оставить заявку</button>
+                </div>
+                <div class="content-media col-xl-4">
+                    <div class="">
+                        <a><i class="col-xl-12 fab fa-whatsapp"></i></a>
+                        <a><i class="col-xl-12 mt-4 fab fa-instagram"></i></a>
+                        <a><i class="col-xl-12 mt-4 fab fa-facebook-square"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<section class="our-services-title">
+    <div class="title">
+            <span class="title-text">
+                Наши услуги
+            </span>
+    </div>
+</section>
+<section class="our-services container">
+
+    <div class="rill">
+        {% for service in services %}
+        <div class="block-1 ">
+            <img src="{{service.image.url}}" alt="">
+            <p>{{service.title}}</p>
+            <p>Хотите узнать подробность, <br>
+                телефон для связи:</p>
+            <a href="#">+996 (0553) 577-575</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<section class="our-work">
+    <div class="our-title">
+            <span class="otitle-text">
+                Наши работы
+            </span>
+    </div>
+</section>
+<section class="container our-work-content">
+    <div>
+        {% for p in portfolio %}
+
+        <div class="gallery0 text-center">
+            <div class="workg1"><img src="{{ p.image.url }}" alt="">
+                <p>{{ p.title }}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </div>
+    <div class="glry-btn text-center">
+        <button class="text-center btn gallery-btn">
+            Все работы
+        </button>
+    </div>
+</section>
+<section class="production-text">
+    <div class="production-title">
+            <span class="ptitle-text">
+                Производство
+            </span>
+    </div>
+</section>
+<section class="container montreal">
+    {% for pr in production %}
+    <div><img src="{{pr.image.url}}" alt=""></div>
+    {% endfor %}
+</section>
+<section class="container cars">
+    <img src="{% static 'img/cars/Rectangle 1.png' %}" alt="1">
+    <img src="{% static 'img/cars/Rectangle 2.png' %}" alt="1">
+    <img src="{% static 'img/cars/Rectangle 3.png' %}" alt="1">
+</section>
+<section class="price-text">
+    <div class="price-title">
+            <span class="prtitle-text">
+                Наш прайс
+            </span>
+    </div>
+</section>
+<section class="container price">
+    <div class="row">
+        <div class="bprice-1 col-xl-3">
+            <img src="{% static 'img/price/pr1.png' %}" alt="1">
+            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
+            <p>1990 сом</p>
+        </div>
+        <div class="bprice-2 col-xl-3">
+            <img src="{% static 'img/price/pr2.png' %}" alt="2">
+            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
+            <p>1990 сом</p>
+        </div>
+        <div class="bprice-3 col-xl-3">
+            <img src="{% static 'img/price/pr3.png' %}" alt="3">
+            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
+            <p>1990 сом</p>
+        </div>
+        <div class="bprice-4 col-xl-3">
+            <img src="{% static 'img/price/pr4.png' %}" alt="4">
+            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
+            <p>1990 сом</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="bprice-1 col-xl-3">
+            <img src="{% static 'img/price/pr1.png' %}" alt="1">
+            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
+            <p>1990 сом</p>
+        </div>
+        <div class="bprice-2 col-xl-3">
+            <img src="{% static 'img/price/pr2.png' %}" alt="2">
+            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
+            <p>1990 сом</p>
+        </div>
+        <div class="bprice-3 col-xl-3">
+            <img src="{% static 'img/price/pr3.png' %}" alt="3">
+            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
+            <p>1990 сом</p>
+        </div>
+        <div class="bprice-4 col-xl-3">
+            <img src="{% static 'img/price/pr4.png' %}" alt="4">
+            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
+            <p>1990 сом</p>
+        </div>
+    </div>
+    <div class="text-center download-price">
+        <button class="btn">
+            Скачать прайс
+        </button>
+    </div>
+</section>
+<section class=" price-mobile">
+    <div class="">
+        <div class="pricem1">
+            <img src="{% static 'img/price-mobile/pm1.png' %}" alt="1">
+            <div class="container">
+                <p class="sum">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
+                <p class="sign">1990 сом</p>
+            </div>
+        </div>
+        <div class="pricem1">
+            <img src="{% static 'img/price-mobile/pm2.png' %}" alt="2">
+            <div class="container">
+                <p class="sum">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
+                <p class="sign">1990 сом</p>
+            </div>
+        </div>
+        <div class="pricem1">
+            <img src="{% static 'img/price-mobile/pm3.png' %}" alt="3">
+            <div class="container">
+                <p class="sum">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
+                <p class="sign">1990 сом</p>
+            </div>
+        </div>
+        <div class="pricem1">
+            <img src="{% static 'img/price-mobile/pm3.png' %}" alt="4">
+            <div class="container">
+                <p class="sum">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
+                <p class="sign">1990 сом</p>
+            </div>
+        </div>
+        <div class="pricem1">
+            <img src="{% static 'img/price-mobile/pm4.png' %}" alt="4">
+            <div class="container">
+                <p class="sum">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
+                <p class="sign">1990 сом</p>
+            </div>
+        </div>
+        <div class="pricem1">
+            <img src="{% static 'img/price-mobile/pm5.png' %}" alt="4">
+            <div class="container">
+                <p class="sum">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
+                <p class="sign">1990 сом</p>
+            </div>
+        </div>
+    </div>
+    <div class="text-center container download-price">
+        <button class="btn">
+            Скачать прайс
+        </button>
+    </div>
+</section>
+<section class="client-text">
+    <div class="client-title">
+            <span class="ctitle-text">
+                Наши клиенты
+            </span>
+    </div>
+</section>
+<section class="container nike">
+    <div><img src="{% static 'img/nikepng.png' %}" alt="nike"></div>
+    <div><img src="{% static 'img/nikepng.png' %}" alt="nike"></div>
+    <div><img src="{% static 'img/nikepng.png' %}" alt="nike"></div>
+    <div><img src="{% static 'img/nikepng.png' %}" alt="nike"></div>
+    <div><img src="{% static 'img/nikepng.png' %}" alt="nike"></div>
+    <div><img src="{% static 'img/nikepng.png' %}" alt="nike"></div>
+</section>
+<section class="crew-text">
+    <div class="crew-title">
+            <span class="crtitle-text">
+                Наша команда
+            </span>
+    </div>
+</section>
+<section class="container people">
+    <div class="row">
+        <div class="iulya col-xl-3">
+            <img src="{% static 'img/our crew/per1.png' %}" alt="person">
+            <p>Юля</p>
+            <p>Соучредитель</p>
+        </div>
+        <div class="anna col-xl-3">
+            <img src="{% static 'img/our crew/per2.png' %}" alt="person">
+            <p>Анна</p>
+            <p>Дизайнер</p>
+        </div>
+        <div class="andrey col-xl-3">
+            <img src="{% static 'img/our crew/per3.png' %}" alt="person">
+            <p>Андрей </p>
+            <p>Соучредитель</p>
+        </div>
+        <div class="albert col-xl-3">
+            <img src="{% static 'img/our crew/per3.png' %}" alt="person">
+            <p>Альберт </p>
+            <p>Соучредитель</p>
+        </div>
+    </div>
+
+</section>
+<section class="container people-mobile">
+    <input type="radio" id="s-1" name="slider-control" checked="checked">
+    <input type="radio" id="s-2" name="slider-control">
+    <input type="radio" id="s-3" name="slider-control">
+    <input type="radio" id="s-4" name="slider-control">
+    <div class="js-slider">
+        <figure class="js-slider_item img-1">
+            <div class="js-slider_img">
+                <img class="c-img-w-full" src="{% static 'img/our crew/per1.png' %}" alt="">
+            </div>
+            <figcaption class="wo-caption">
+                <h3 class="wo-h3">
+                    <div class="c-label">Юля</div>
+                    <br class="view-sm mb-s">Соучредитель
+                </h3>
+            </figcaption>
+        </figure>
+        <figure class="js-slider_item img-2">
+            <div class="js-slider_img">
+                <img class="c-img-h-full" src="{% static 'img/our crew/per2.png' %}" alt=""></div>
+            <figcaption class="wo-caption">
+                <h3 class="wo-h3">
+                    <div class="c-label">Анна</div>
+                    <br class="view-sm mb-s">Дизайнер
+                </h3>
+            </figcaption>
+        </figure>
+
+        <figure class="js-slider_item img-3">
+            <div class="js-slider_img">
+                <img class="c-img-h-full" src="{% static 'img/our crew/per3.png' %}" alt=""></div>
+            <figcaption class="wo-caption">
+                <h3 class="wo-h3">
+                    <div class="c-label">Андрей</div>
+                    <br class="view-sm mb-s">Соучредитель
+                </h3>
+            </figcaption>
+        </figure>
+
+        <div class="js-slider_nav">
+            <label class="js-slider_nav_item s-nav-1 prev" for="s-3"><i class="fas fa-chevron-left"></i></label>
+            <label class="js-slider_nav_item s-nav-1 next" for="s-2"><i class="fas fa-chevron-left"></i></label>
+            <label class="js-slider_nav_item s-nav-2 prev" for="s-1"><i class="fas fa-chevron-left"></i></label>
+            <label class="js-slider_nav_item s-nav-2 next" for="s-3"><i class="fas fa-chevron-left"></i></label>
+            <label class="js-slider_nav_item s-nav-3 prev" for="s-2"><i class="fas fa-chevron-left"></i></label>
+            <label class="js-slider_nav_item s-nav-3 next" for="s-1"><i class="fas fa-chevron-left"></i></label>
+        </div>
+        <div class="js-slider_indicator">
+            <div class="js-slider-indi indi-1"></div>
+            <div class="js-slider-indi indi-2"></div>
+            <div class="js-slider-indi indi-3"></div>
+
+        </div>
+    </div>
+
+</section>
+<section class="container order">
+    <div class="lend">
+        <p class=" text-center">Рассчитать</p>
+    </div>
+    <p class="manage text-center">и менеджер по работе с клиентами свяжется с вами и проконсультирует</p>
+</section>
+<section class="container form">
+    <div class="form-dis">
+        <div><input type="text" placeholder="Ваше имя"></div>
+        <div><input type="number" placeholder="Ваш телефон"></div>
+        <div class="form-btn text-center">
+            <button class="btn">
+                Отправить
+            </button>
+        </div>
+    </div>
+</section>
+<footer class="information container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="about-company col-xl-3 col-xl-3 col-sm-3">
+                <p>
+                    О компании
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit ut aliquam, purus sit amet
+                    luctus venenatis, lectus magna fringilla
+                    urna, porttitor rhoncus dolor purus non
+                    enim
+                </p>
+            </div>
+            <div class="information-links col-xl-3 col-sm-3">
+                <div>
+                    <p>Информация </p>
+                    <div class="information-links1">
+                        <a href="services.html">Услуги </a>
+                        <a href="work.html"> <br> О нас </a>
+                        <a href="contacts.html"> <br> Контакты</a>
+                        <a href="portfolio.html"> <br> Портфолио </a>
+                        <a href="production.html"> <br> Производство </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="contacts col-xl-3  col-lg-3  col-sm-3">
+                <p>Контактная информация</p>
+                <p>Бишкек, ул. Калык Акиева 66, <br> ТЦ Весна, 3 этаж, офис №37
+                </p>
+                <p>+996 (0553) 577-575</p>
+                <p>Email@gmail.com</p>
+            </div>
+            <div class="social-media col-xl-3 col-lg-3 col-sm-3">
+                <p>Мы в социальных сетях </p>
+                <div class="">
+                    <a href="#">Instagram </a>
+                    <a href="#"> <br> Facebook</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<script src="{% static 'js/burger.js' %}"></script>
+</body>
+
+</html>
