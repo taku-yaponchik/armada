@@ -177,49 +177,16 @@
 </section>
 <section class="container price">
     <div class="row">
+        {% for pr in price %}
         <div class="bprice-1 col-xl-3">
-            <img src="{% static 'img/price/pr1.png' %}" alt="1">
-            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
+            <img src="{{ pr.image.url }}" alt="1">
+            <p class="mt-2">{{pr.title}}</p>
             <p>1990 сом</p>
         </div>
-        <div class="bprice-2 col-xl-3">
-            <img src="{% static 'img/price/pr2.png' %}" alt="2">
-            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
-            <p>1990 сом</p>
-        </div>
-        <div class="bprice-3 col-xl-3">
-            <img src="{% static 'img/price/pr3.png' %}" alt="3">
-            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
-            <p>1990 сом</p>
-        </div>
-        <div class="bprice-4 col-xl-3">
-            <img src="{% static 'img/price/pr4.png' %}" alt="4">
-            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
-            <p>1990 сом</p>
-        </div>
+        {% endfor %}
+
     </div>
-    <div class="row">
-        <div class="bprice-1 col-xl-3">
-            <img src="{% static 'img/price/pr1.png' %}" alt="1">
-            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
-            <p>1990 сом</p>
-        </div>
-        <div class="bprice-2 col-xl-3">
-            <img src="{% static 'img/price/pr2.png' %}" alt="2">
-            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
-            <p>1990 сом</p>
-        </div>
-        <div class="bprice-3 col-xl-3">
-            <img src="{% static 'img/price/pr3.png' %}" alt="3">
-            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
-            <p>1990 сом</p>
-        </div>
-        <div class="bprice-4 col-xl-3">
-            <img src="{% static 'img/price/pr4.png' %}" alt="4">
-            <p class="mt-2">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
-            <p>1990 сом</p>
-        </div>
-    </div>
+
     <div class="text-center download-price">
         <button class="btn">
             Скачать прайс
@@ -285,12 +252,9 @@
     </div>
 </section>
 <section class="container nike">
-    <div><img src="{% static 'img/nikepng.png' %}" alt="nike"></div>
-    <div><img src="{% static 'img/nikepng.png' %}" alt="nike"></div>
-    <div><img src="{% static 'img/nikepng.png' %}" alt="nike"></div>
-    <div><img src="{% static 'img/nikepng.png' %}" alt="nike"></div>
-    <div><img src="{% static 'img/nikepng.png' %}" alt="nike"></div>
-    <div><img src="{% static 'img/nikepng.png' %}" alt="nike"></div>
+    {% for cu in customer %}
+    <div><img src="{{cu.image.url}}" alt="nike"></div>
+    {% endfor %}
 </section>
 <section class="crew-text">
     <div class="crew-title">
@@ -301,26 +265,13 @@
 </section>
 <section class="container people">
     <div class="row">
+        {% for co in command %}
         <div class="iulya col-xl-3">
-            <img src="{% static 'img/our crew/per1.png' %}" alt="person">
-            <p>Юля</p>
-            <p>Соучредитель</p>
+            <img src="{{co.image.url}}" alt="person">
+            <p>{{co.name}}</p>
+            <p>{{co.profession}}</p>
         </div>
-        <div class="anna col-xl-3">
-            <img src="{% static 'img/our crew/per2.png' %}" alt="person">
-            <p>Анна</p>
-            <p>Дизайнер</p>
-        </div>
-        <div class="andrey col-xl-3">
-            <img src="{% static 'img/our crew/per3.png' %}" alt="person">
-            <p>Андрей </p>
-            <p>Соучредитель</p>
-        </div>
-        <div class="albert col-xl-3">
-            <img src="{% static 'img/our crew/per3.png' %}" alt="person">
-            <p>Альберт </p>
-            <p>Соучредитель</p>
-        </div>
+        {% endfor %}
     </div>
 
 </section>
