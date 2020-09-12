@@ -725,8 +725,8 @@ color: #753ED6;
     padding-left: 34px;
 }
 .gallery0{
-    display: none;
-}
+    display: block !important;
+    }
 .cars{
     display: none;
 }

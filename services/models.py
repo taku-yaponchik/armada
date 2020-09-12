@@ -5,8 +5,8 @@ from django.db import models
 
 class Services(models.Model):
     '''Модель для наших услуг'''
-    title = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='services/', default='NoPhoto')
+    title = models.CharField(max_length=100, verbose_name='Наши услуги')
+    image = models.ImageField(upload_to='services/', default='NoPhoto', verbose_name='Фото')
 
     class Meta:
         ordering = ('-title',)
@@ -19,8 +19,8 @@ class Services(models.Model):
 
 class Portfolio(models.Model):
     '''Модуль для наших работ'''
-    title = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='portfolio/', default='NoPhoto')
+    title = models.CharField(max_length=100, verbose_name='Наши работы')
+    image = models.ImageField(upload_to='portfolio/', default='NoPhoto', verbose_name='Фото')
 
     class Meta:
         ordering = ('-title',)
@@ -33,8 +33,8 @@ class Portfolio(models.Model):
 
 class Production(models.Model):
     '''Модуль для производство'''
-    title = models.CharField(max_length=150)
-    image = models.ImageField(upload_to='production/', default='NoPhoto')
+    title = models.CharField(max_length=150, verbose_name='Производство')
+    image = models.ImageField(upload_to='production/', default='NoPhoto', verbose_name='Фото')
 
     class Meta:
         ordering = ('-title',)
@@ -47,9 +47,9 @@ class Production(models.Model):
 
 class Price(models.Model):
     '''Модуль для прайса'''
-    title = models.CharField(max_length=150)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    image = models.ImageField(upload_to='price/', default='NoPhoto')
+    title = models.CharField(max_length=150, verbose_name='Название')
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Прайс')
+    image = models.ImageField(upload_to='price/', default='NoPhoto', verbose_name='Фото')
 
     class Meta:
         ordering = ('-title',)
@@ -62,8 +62,8 @@ class Price(models.Model):
 
 class Customer(models.Model):
     '''Модуль для клиентов'''
-    image = models.ImageField(upload_to='customer/', default='NoPhoto')
-    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='customer/', default='NoPhoto', verbose_name='Фото')
+    name = models.CharField(max_length=100, verbose_name='Имя клиента')
 
     class Meta:
         ordering = ('-name',)

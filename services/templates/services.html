@@ -67,7 +67,8 @@
     </div>
     <div class="mobile-content">
         <div class="intro__media-mobile">
-            <video class="intro__video-mobile" src="{% static './video/5минут новый.mp4' %}" autoplay muted loop></video>
+            <img src="{% static '/img/background.png' %}" alt="" class="img-big">
+            <!--            <video class="intro__video-mobile" src="{% static './video/5минут новый.mp4' %}" autoplay muted loop></video>-->
         </div>
         <p>Наружная реклама в <br> <span class="bish">Бишкеке</span> </p>
         <p>Произдводство наружной рекламы
@@ -125,6 +126,7 @@
         {% endfor %}
     </div>
 </section>
+
 <section class="our-work">
     <div class="our-title">
             <span class="otitle-text">
@@ -134,15 +136,16 @@
 </section>
 <section class="container our-work-content">
     <div>
-        {% for p in portfolio %}
+        <div class="gallery0 d-flex justify-content-between flex-wrap text-center">
 
-        <div class="gallery0 text-center">
-            <div class="workg1"><img src="{{ p.image.url }}" alt="">
-                <p>{{ p.title }}</p>
+            {% for po in portfolio %}
+
+            <div class="workg1"><img src="{{po.image.url}}" alt="" >
+                <p>{{po.title}}</p>
             </div>
-        </div>
-        {% endfor %}
+            {% endfor %}
 
+        </div>
 
     </div>
     <div class="glry-btn text-center">
@@ -160,7 +163,9 @@
 </section>
 <section class="container montreal">
     {% for pr in production %}
-    <div><img src="{{pr.image.url}}" alt=""></div>
+    <div><img src="{{pr.image.url}}" alt="">
+        <p>{{pr.title}}</p>
+    </div>
     {% endfor %}
 </section>
 <section class="container cars">
@@ -181,7 +186,7 @@
         <div class="bprice-1 col-xl-3">
             <img src="{{ pr.image.url }}" alt="1">
             <p class="mt-2">{{pr.title}}</p>
-            <p>1990 сом</p>
+            <p>{{pr.price}} сом</p>
         </div>
         {% endfor %}
 
@@ -195,6 +200,7 @@
 </section>
 <section class=" price-mobile">
     <div class="">
+        {% for pr in price %}
         <div class="pricem1">
             <img src="{% static 'img/price-mobile/pm1.png' %}" alt="1">
             <div class="container">
@@ -202,41 +208,8 @@
                 <p class="sign">1990 сом</p>
             </div>
         </div>
-        <div class="pricem1">
-            <img src="{% static 'img/price-mobile/pm2.png' %}" alt="2">
-            <div class="container">
-                <p class="sum">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
-                <p class="sign">1990 сом</p>
-            </div>
-        </div>
-        <div class="pricem1">
-            <img src="{% static 'img/price-mobile/pm3.png' %}" alt="3">
-            <div class="container">
-                <p class="sum">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
-                <p class="sign">1990 сом</p>
-            </div>
-        </div>
-        <div class="pricem1">
-            <img src="{% static 'img/price-mobile/pm3.png' %}" alt="4">
-            <div class="container">
-                <p class="sum">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
-                <p class="sign">1990 сом</p>
-            </div>
-        </div>
-        <div class="pricem1">
-            <img src="{% static 'img/price-mobile/pm4.png' %}" alt="4">
-            <div class="container">
-                <p class="sum">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
-                <p class="sign">1990 сом</p>
-            </div>
-        </div>
-        <div class="pricem1">
-            <img src="{% static 'img/price-mobile/pm5.png' %}" alt="4">
-            <div class="container">
-                <p class="sum">Фасадная вывеска (подсветка <br> внутреняя, железный короб, флекс)</p>
-                <p class="sign">1990 сом</p>
-            </div>
-        </div>
+        {% endfor %}
+
     </div>
     <div class="text-center container download-price">
         <button class="btn">
@@ -335,18 +308,29 @@
     <div class="lend">
         <p class=" text-center">Рассчитать</p>
     </div>
-    <p class="manage text-center">и менеджер по работе с клиентами свяжется с вами и проконсультирует</p>
+    {% block content %}
+
+    {% endblock %}
+    <p class="manage text-center">Менеджер по работе с клиентами свяжется с вами и проконсультирует</p>
 </section>
 <section class="container form">
-    <div class="form-dis">
-        <div><input type="text" placeholder="Ваше имя"></div>
-        <div><input type="number" placeholder="Ваш телефон"></div>
-        <div class="form-btn text-center">
-            <button class="btn">
-                Отправить
-            </button>
+    <form action="." method="post" class="form-stacked">
+        {% if form.errors %}
+        <p>{{form.errors}}</p>
+        {%endif%}
+        <div class="form-dis">
+            <div class="control">
+                {{form.name}}
+            </div>
+            <div class="control">
+                {{form.phone}}
+            </div>
+            <div class="form-btn text-center">
+                <p><input type="submit" value="Отправить заказ"></p>
+                {% csrf_token %}
+            </div>
         </div>
-    </div>
+    </form>
 </section>
 <footer class="information container-fluid">
     <div class="container">

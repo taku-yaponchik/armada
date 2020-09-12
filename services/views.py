@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from .forms import ContactClientForm
 # Create your views here.
@@ -6,7 +6,7 @@ from .forms import ContactClientForm
 
 def services_list(request):
     services = Services.objects.all()
-    portfolio = Portfolio.objects.all()[:3]
+    portfolio = Portfolio.objects.all()
     production = Production.objects.all()
     price = Price.objects.all()
     customer = Customer.objects.all()
@@ -17,7 +17,8 @@ def services_list(request):
         form = ContactClientForm(request.POST)
         if form.is_valid():
             contact = form.save()
-            return render(request, 'service.html', {'contact': contact})
+            contact.save()
+            return redirect(request, 'service.html', {'contact': contact})
     else:
         form = ContactClientForm()
 
