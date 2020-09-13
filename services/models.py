@@ -92,7 +92,7 @@ class Command(models.Model):
 class ContactClient(models.Model):
     '''Модуль для наших клиентов'''
     name = models.CharField(max_length=100, blank=True, verbose_name='Имя')
-    phone = models.DecimalField(max_digits=22, decimal_places=2, verbose_name='Номер телефона')
+    phone = models.CharField(max_length=22, verbose_name='Номер телефона')
 
     class Meta:
         ordering = ('-name',)

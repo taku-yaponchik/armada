@@ -18,7 +18,7 @@ def services_list(request):
         if form.is_valid():
             contact = form.save()
             contact.save()
-            return redirect(request, 'service.html', {'contact': contact})
+            return redirect(request, 'contact_form.html', {'contact': contact})
     else:
         form = ContactClientForm()
 
@@ -32,4 +32,17 @@ def services_list(request):
         'contact_client': contact_client,
         'form': form
     }
-    return render(request, 'services.html', context)
+    return render(request, 'index.html', context)
+
+
+def portfolio_list(request):
+    portfolio_panel = Portfolio.objects.all()
+
+
+
+    context = {
+        'portfolio_panel': portfolio_panel,
+
+
+    }
+    return render(request, 'portfolio_panel.html', context)

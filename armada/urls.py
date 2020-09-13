@@ -20,7 +20,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('services.urls'))
+    path('', include('services.urls')),
+    # path('portfolio/', include('portfolio_panel.urls')),
 ]
 
 if settings.DEBUG:

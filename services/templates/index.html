@@ -65,6 +65,11 @@
             <a href="index.html"> <div class="logos"><img src="{% static 'img/logo.png' %}" alt="logo"></div></a>
         </div>
     </div>
+
+
+    {% block content %}
+
+
     <div class="mobile-content">
         <div class="intro__media-mobile">
             <img src="{% static '/img/background.png' %}" alt="" class="img-big">
@@ -149,8 +154,8 @@
 
     </div>
     <div class="glry-btn text-center">
-        <button class="text-center btn gallery-btn">
-            Все работы
+        <button class="text-center btn gallery-btn"><a href="{% url 'portfolio_panel'%}">
+            Все работы</a>
         </button>
     </div>
 </section>
@@ -308,9 +313,6 @@
     <div class="lend">
         <p class=" text-center">Рассчитать</p>
     </div>
-    {% block content %}
-
-    {% endblock %}
     <p class="manage text-center">Менеджер по работе с клиентами свяжется с вами и проконсультирует</p>
 </section>
 <section class="container form">
@@ -332,6 +334,9 @@
         </div>
     </form>
 </section>
+
+
+{% endblock %}
 <footer class="information container-fluid">
     <div class="container">
         <div class="row">

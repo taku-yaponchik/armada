@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+Портфолио
+{% endblock %}
+{% block content %}
+<section class="our-services-title">
+    <div class="title title__potfolio">
+                <span class="title-text">
+                    Портфолио
+                </span>
+    </div>
+</section>
+<section>
+    <section class="container">
+        <div class="photos__portfolio">
+            <div class="row">
+                {% for portfolio in portfolio_panel %}
+                <div class="give3">
+                    <img class="image__portfolio image1" src="{{portfolio.image.url}}" alt="" >
+                    <h5>{{portfolio.title}}</h5>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static 'js/burger.js' %}"></script>
+    {% endblock %}

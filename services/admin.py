@@ -35,7 +35,7 @@ class CommandAdmin(admin.ModelAdmin):
 
 @admin.register(ContactClient)
 class ContactClientAdmin(admin.ModelAdmin):
-    list_display = ['name']
+    list_display = ['name', 'phone']
 
 
 
